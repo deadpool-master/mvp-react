@@ -10,8 +10,6 @@ function App() {
         <p>
           Hello Iplay
         </p>
-        asdasdkashf;asflma'sfkasfm'asflma
-
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -24,5 +22,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
