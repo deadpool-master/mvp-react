@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route
+import {
+  BrowserRouter as Router, Route
   // ,Link 
-  } from 'react-router-dom'
+} from 'react-router-dom'
 // import './App.css';
 // import "../src/web";
 
@@ -24,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
 
-   
+
       // <form> <center>
 
 
@@ -48,23 +49,24 @@ class App extends React.Component {
       //   {/* <header>
       //     Hii people in HEADER
       //   </header> */}
-        // <div>
-        //   <Welcomepage />
-        // </div>
-      
-        <div>
-      <Header />
-          <Router>
-          
+      // <div>
+      //   <Welcomepage />
+      // </div>
 
-     
-            <Route exact path="/welcomepage" component={Welcomepage} />
-            <Route exact path="/" component={Welcomepage} />
-            <Route exact path="/Shop" component={Shoppage} />
+      <div>
+        <Router>
 
-            <Route exact path="/cardlist" component={Cardlist} />
-          </Router>
-        </div>
+          <Header />
+
+
+
+          <Route exact path="/welcomepage" component={Welcomepage} />
+          <Route exact path="/" component={Welcomepage} />
+          <Route exact path="/Shop" component={Shoppage} />
+
+          <Route exact path="/cardlist" component={Cardlist} />
+        </Router>
+      </div>
 
       //   {/* <div>
       //     <footer>
@@ -77,7 +79,7 @@ class App extends React.Component {
 
     );
   }
-}   
+}
 
 
 export default App;

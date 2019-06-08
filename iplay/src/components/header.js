@@ -1,5 +1,5 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -43,7 +43,7 @@ class Header extends React.Component {
 						 {/* <!--/navbar header-->		 */}
 						 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							 <ul className="nav navbar-nav">
-								 <li><a href="/Shop">Shop</a></li>
+								 <li><Link to="/Shop">Shop</Link></li>
 								 <li><a href="about.html">About</a></li>
 								 <li className="dropdown">
 									<a href="#" className="scroll dropdown-toggle" data-toggle="dropdown">Reviews<b className="caret"></b></a>
@@ -54,7 +54,7 @@ class Header extends React.Component {
 									</ul>
 								 </li>					
 								 <li><a href="gallery.html">Gallery</a></li>
-								 <li className="active"><a href="shortcodes.html">Shortcodes</a></li>
+								 <li className="active"><a href="#">Shortcodes</a></li>
 								 <li><a href="contact.html">Contact</a></li>
 							 </ul>
 							</div>

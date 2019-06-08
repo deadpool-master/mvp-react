@@ -30,6 +30,8 @@ class Shoppage extends React.Component {
       
   <div>
       HELLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO WORLD
+      <br></br>
+      SAY HII TO OUR SHOP !!!!!!!!
   </div>
 
     )
