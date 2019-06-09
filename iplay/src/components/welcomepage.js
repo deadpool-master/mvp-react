@@ -1,6 +1,7 @@
 import React from 'react';
+// import ReactDom from "react-dom";
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import "../../public/css/bootstrap.css"
+// import "../../public/css"
 
 class Welcomepage extends React.Component {
   constructor(props) {
