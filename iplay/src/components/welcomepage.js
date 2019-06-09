@@ -1,5 +1,6 @@
 import React from 'react';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import "../../public/css/bootstrap.css"
 
 class Welcomepage extends React.Component {
   constructor(props) {
