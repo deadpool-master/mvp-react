@@ -1,6 +1,6 @@
 import React from 'react';
 //importing css files
-// import "../cssshop/";
+// import "../../public/css/";
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 

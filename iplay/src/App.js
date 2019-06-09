@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route
+  BrowserRouter , Route
   // ,Link 
 } from 'react-router-dom'
 // import './App.css';
 // import "../src/web";
 
 import Welcomepage from './components/welcomepage';
-import Cardlist from './components/cardlist';
+// import Cardlist from './components/cardlist';
 import Header from './components/header';
 import Shoppage from './components/shop';
 
@@ -54,7 +54,7 @@ class App extends React.Component {
       // </div>
 
       <div>
-        <Router>
+        <BrowserRouter>
 
           <Header />
 
@@ -64,8 +64,7 @@ class App extends React.Component {
           <Route exact path="/" component={Welcomepage} />
           <Route exact path="/Shop" component={Shoppage} />
 
-          <Route exact path="/cardlist" component={Cardlist} />
-        </Router>
+        </BrowserRouter>
       </div>
 
       //   {/* <div>
