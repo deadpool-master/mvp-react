@@ -27,7 +27,7 @@ class Header extends React.Component {
 		 </div>
 		 <div className="banner_head_top">
 			  <div className="logo">
-					<h1><a href="/Welcomepage">i<span>Play</span></a></h1>
+					<h1><Link to="/Welcomepage">i<span>Play</span></Link></h1>
 			 </div>	
 			 <div className="top-menu">	 
 			     <div className="content white">

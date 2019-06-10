@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route
+  BrowserRouter, Route
   // ,Link 
 } from 'react-router-dom'
 // import './App.css';
@@ -10,9 +10,7 @@ import Welcomepage from './components/welcomepage';
 import Cardlist from './components/cardlist';
 import Header from './components/header';
 import Shoppage from './components/shop';
-
-
-
+import Footer from "./components/footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,7 +52,7 @@ class App extends React.Component {
       // </div>
 
       <div>
-        <Router>
+        <BrowserRouter>
 
           <Header />
 
@@ -65,7 +63,8 @@ class App extends React.Component {
           <Route exact path="/Shop" component={Shoppage} />
 
           <Route exact path="/cardlist" component={Cardlist} />
-        </Router>
+        </BrowserRouter>
+        <Footer />
       </div>
 
       //   {/* <div>
