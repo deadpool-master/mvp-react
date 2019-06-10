@@ -10,9 +10,7 @@ import Welcomepage from './components/welcomepage';
 import Cardlist from './components/cardlist';
 import Header from './components/header';
 import Shoppage from './components/shop';
-
-
-
+import Footer from "./components/footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -66,6 +64,7 @@ class App extends React.Component {
 
           <Route exact path="/cardlist" component={Cardlist} />
         </BrowserRouter>
+        <Footer />
       </div>
 
       //   {/* <div>
