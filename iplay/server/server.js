@@ -4,6 +4,7 @@ var express = require('express');
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const { Address, User } = require("../database/database-models.js");
 
 //add sql database
 
@@ -20,10 +21,9 @@ app.use(bodyParser.json());
 
 //sign up for admin(dispatch)
 
-app.post('/signupadmin', (req, res) => {
+app.post('/sign-up-customer', (req, res) => {
   console.log(req.body);
-  const firstname = req.body.firstname;
-  const lastname = req.body.lastname;
+  const username = req.body.username;
   const email = req.body.email;
   const phonenumber = req.body.phonenumber;
   const password = req.body.password;
@@ -33,7 +33,7 @@ app.post('/signupadmin', (req, res) => {
   console.log(password);
   console.log(hashedpass);
 
-  admin.findOne({ email: email, phonenumber: phonenumber }).then((data) => {
+  User.findOne({ email: email, phonenumber: phonenumber }).then((data) => {
     if (data.email) {
       console.log("Email already exists!");
       alert('Email already exists!');
@@ -53,9 +53,8 @@ app.post('/signupadmin', (req, res) => {
       return res.send('Email & Phone number are used for another customer please change them, Thank you!');
 
     } else {
-      admin.create({
-        firstname: firstname,
-        lastname: lastname,
+      User.create({
+        username: username,
         email: email,
         phonenumber: phonenumber,
         password: hashedpass
@@ -73,11 +72,11 @@ app.post('/signupadmin', (req, res) => {
 });
 
 // Sign In Admin (dispatch)
-app.post('/signinadmin', (req, res) => {
+app.post('/sign-in-customer', (req, res) => {
   const emailorphonenumber = req.body.email || req.body.phonenumber;
   const password = req.body.password;
 
-  admin.findOne({ emailorphonenumber: emailorphonenumber }).then((data) => {
+  User.findOne({ emailorphonenumber: emailorphonenumber }).then((data) => {
     if (!data.req.body.email) {
       console.log("You Email is not registered yet, Please sign up first");
       alert('You Email is not registered yet, Please sign up first');
@@ -103,6 +102,49 @@ app.post('/signinadmin', (req, res) => {
 
 });
 
+
+app.post("/register-address", (req, res) => {
+  console.log(req.body);
+  const area = req.body.area;
+  const streetName = req.body.streetName;
+  const buildingNumberr = req.body.buildingNumberr;
+  const phoneNumber = req.body.phoneNumber;
+
+    Address.create({
+      area: area,
+      streetName: streetName,
+      buildingNumberr: buildingNumberr,
+      phoneNumber: phoneNumber
+    }).then((tt) => {
+      console.log('Done, You are succesfully sign up :D');
+      return res.send({ done: " succesful", tt: tt });
+    }).catch((err) => {
+      console.log(err);
+      return res.status(SERVER_ERROR).send({ error: 'server error' });
+    });
+    
+    
+  });
+
+// if (data.email) {
+//   console.log("Email already exists!");
+//   alert('Email already exists!');
+//   console.error('Please Change your email address, Thank you!');
+//   return res.send('Email already in use from another customer, Please sign up with another email address.')
+
+// } else if (data.phonenumber) {
+//   console.log("phone numbar already exists!");
+//   alert('phone numbar already exists!');
+//   console.error('Please Change your phonen umbar, Thank you!');
+//   return res.send('phone numbar already in use for another customer, Please sign up with another phone numbar.')
+
+// } else if (data.email && data.phonenumber) {
+//   console.log("Please Change your email and phone number to signup");
+//   alert('Please Change your email and phone number to signup');
+//   console.error('Email & Phone number are already used, Please change them to sign up');
+//   return res.send('Email & Phone number are used for another customer please change them, Thank you!');
+
+// } 
 
 
 app.get('/', function (req, res) {
