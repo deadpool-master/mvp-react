@@ -1,6 +1,5 @@
 var express = require('express');
 // var React = require('react');
-
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
@@ -9,7 +8,7 @@ const { Address, User } = require("../database/database-models.js");
 //add sql database
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4500
 const saltRounds = 10;
  
 //status codes
@@ -101,6 +100,16 @@ app.post('/sign-in-customer', (req, res) => {
   });
 
 });
+
+
+
+
+
+
+
+
+
+
 
 
 app.post("/register-address", (req, res) => {
