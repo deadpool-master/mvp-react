@@ -1,4 +1,6 @@
 var express = require('express');
+// var React = require('react');
+
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
@@ -8,7 +10,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000
 const saltRounds = 10;
-
+ 
 //status codes
 const UNAUTHORIZED_status = 401;
 const SERVER_ERROR = 500;
